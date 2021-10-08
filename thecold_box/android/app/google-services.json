@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "343992953541",
+    "project_id": "the-cold-box",
+    "storage_bucket": "the-cold-box.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:343992953541:android:9b7984265a420588af9eac",
+        "android_client_info": {
+          "package_name": "com.example.thecold_box"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "343992953541-tn2ep36t9actfgcucutudupt4s62qj0c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.thecold_box",
+            "certificate_hash": "77f3417c2412b2d6b909675511afa12de6b35f84"
+          }
+        },
+        {
+          "client_id": "343992953541-tuhur5erfoe93no67totc9emoahmupo4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTgmCW8KP5R2z31oYbcd1jGetW3HSFM74"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "343992953541-tuhur5erfoe93no67totc9emoahmupo4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
