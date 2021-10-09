@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:thecold_box/model/home_model.dart';
 import 'package:thecold_box/screens/camerapage.dart';
+import 'package:thecold_box/screens/menu.dart';
+import 'package:thecold_box/screens/profile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -21,7 +23,10 @@ class _HomePageState extends State<HomePage> {
     HomeModel(name: 'Apple', useby: '03/08'),
     HomeModel(name: 'Potato', useby: '03/08'),
     HomeModel(name: 'Drumsticks', useby: '04/08'),
-    HomeModel(name: 'Apple', useby: '06/08'),
+    HomeModel(name: 'Pumpkin', useby: '06/08'),
+    HomeModel(name: 'Pumpkin', useby: '06/08'),
+    // HomeModel(name: 'Pumpkin', useby: '06/08'),
+    // HomeModel(name: 'Pumpkin', useby: '06/08'),
   ];
 
   @override
@@ -33,7 +38,10 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: mainColor,
         elevation: 0.0,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => ProfilePage()));
+          },
           color: Colors.black,
           icon: Icon(
             Icons.person,
@@ -42,11 +50,14 @@ class _HomePageState extends State<HomePage> {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => MenuPage()));
+            },
             color: Colors.black,
             icon: Icon(
               Icons.menu,
-              size: 40,
+              size: 35,
             ),
           ),
         ],
@@ -82,16 +93,23 @@ class _HomePageState extends State<HomePage> {
                 },
                 value: currentItemSelected,
               ),
-              SizedBox(
-                height: 400,
+              Expanded(
                 child: ListView(
+                  shrinkWrap: true,
                   children: [...list.map(buildSingleCheckbox).toList()],
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.all(20),
-                child: gotMore,
-              ),
+              ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.black,
+                    minimumSize: Size(175, 50),
+                    elevation: 2,
+                  ),
+                  onPressed: () {},
+                  child: Text(
+                    'Got More',
+                    style: TextStyle(fontSize: 17, color: Colors.white),
+                  )),
             ],
           ),
         ),
