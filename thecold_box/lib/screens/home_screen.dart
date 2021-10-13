@@ -20,29 +20,24 @@ class _HomePageState extends State<HomePage> {
   var currentItemSelected = 'Today';
   bool value = false;
   final list = [
-    HomeModel(name: 'Apple', useby: '03/08'),
-    HomeModel(name: 'Potato', useby: '03/08'),
-    HomeModel(name: 'Drumsticks', useby: '04/08'),
-    HomeModel(name: 'Pumpkin', useby: '06/08'),
-    HomeModel(name: 'Pumpkin', useby: '06/08'),
-    // HomeModel(name: 'Pumpkin', useby: '06/08'),
-    // HomeModel(name: 'Pumpkin', useby: '06/08'),
+    HomeModel(id: 'Fruit', name: 'Apple', useby: '03/08'),
+    HomeModel(id: 'Vegetable', name: 'Potato', useby: '03/08'),
+    HomeModel(id: 'Vegetable', name: 'Drumsticks', useby: '04/08'),
+    HomeModel(id: 'Vegetable', name: 'Pumpkin', useby: '06/08'),
+    HomeModel(id: 'Fruit', name: 'Banana', useby: '06/08'),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: mainColor,
       //App Bar
       appBar: AppBar(
-        backgroundColor: mainColor,
         elevation: 0.0,
         leading: IconButton(
           onPressed: () {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => ProfilePage()));
           },
-          color: Colors.black,
           icon: Icon(
             Icons.person,
             size: 40,
@@ -54,7 +49,6 @@ class _HomePageState extends State<HomePage> {
               Navigator.push(
                   context, MaterialPageRoute(builder: (context) => MenuPage()));
             },
-            color: Colors.black,
             icon: Icon(
               Icons.menu,
               size: 35,
@@ -101,14 +95,16 @@ class _HomePageState extends State<HomePage> {
               ),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.black,
                     minimumSize: Size(175, 50),
                     elevation: 2,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => CameraPage()));
+                  },
                   child: Text(
                     'Got More',
-                    style: TextStyle(fontSize: 17, color: Colors.white),
+                    style: TextStyle(fontSize: 17),
                   )),
             ],
           ),
@@ -127,7 +123,6 @@ class _HomePageState extends State<HomePage> {
 
   final gotMore = Material(
     elevation: 5,
-    color: Colors.black,
     child: MaterialButton(
       padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
       onPressed: () {
@@ -138,7 +133,6 @@ class _HomePageState extends State<HomePage> {
         textAlign: TextAlign.center,
         style: TextStyle(
           fontSize: 20,
-          color: Colors.white,
           fontWeight: FontWeight.bold,
         ),
       ),

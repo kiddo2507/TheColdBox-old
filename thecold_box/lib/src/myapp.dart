@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:thecold_box/provider/theme_provider.dart';
 import 'package:thecold_box/screens/login.dart';
-import 'package:thecold_box/screens/login_screen.dart';
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'The Cold Box',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.red,
-      ),
-      home: LoginScreen(),
-    );
-  }
+  Widget build(BuildContext context) =>
+      //ThemeMode themeMode = ThemeMode.system;
+      ChangeNotifierProvider(
+        create: (context) => ThemeProvider(),
+        builder: (context, _) {
+          final themeProvider = Provider.of<ThemeProvider>(context);
+          return MaterialApp(
+            title: 'The Cold Box',
+            debugShowCheckedModeBanner: false,
+            themeMode: themeProvider.themeMode,
+            theme: MyThemes.lightTheme,
+            darkTheme: MyThemes.darkTheme,
+            home: LoginScreenNew(),
+          );
+        },
+      );
 }

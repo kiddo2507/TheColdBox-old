@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:thecold_box/model/user_model.dart';
 import 'package:thecold_box/screens/home_screen.dart';
+import 'package:thecold_box/screens/verify.dart';
 
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({Key? key}) : super(key: key);
@@ -239,8 +240,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     if (_formKey.currentState!.validate()) {
       await _auth
           .createUserWithEmailAndPassword(email: email, password: password)
-          .then((value) => {postDetailsToFirestore()})
-          .catchError((e) {
+          .then((value) {
+        postDetailsToFirestore();
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => VerifyScreen()));
+      }).catchError((e) {
         Fluttertoast.showToast(msg: e!.message);
       });
     }
@@ -266,9 +270,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         .collection("users")
         .doc(user.uid)
         .set(userModel.toMap());
-    Fluttertoast.showToast(msg: "Account created successfully :) ");
+    // Fluttertoast.showToast(msg: "Account created successfully :) ");
 
-    Navigator.pushAndRemoveUntil(context,
-        MaterialPageRoute(builder: (context) => HomePage()), (route) => false);
+    // Navigator.pushAndRemoveUntil(context,
+    //     MaterialPageRoute(builder: (context) => HomePage()), (route) => false);
   }
 }

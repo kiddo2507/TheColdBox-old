@@ -1,16 +1,19 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:thecold_box/screens/login_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:thecold_box/screens/login.dart';
+import 'package:thecold_box/wontuse/login_screen.dart';
 
 import 'home_screen.dart';
 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({Key? key}) : super(key: key);
+  final auth = FirebaseAuth.instance;
+  // User user;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
           onPressed: () {
@@ -19,7 +22,6 @@ class ProfilePage extends StatelessWidget {
           },
           icon: Icon(
             Icons.arrow_back,
-            color: Colors.black,
           ),
         ),
       ),
@@ -45,62 +47,64 @@ class ProfilePage extends StatelessWidget {
                 style: TextStyle(fontSize: 50),
               ),
             ),
-            Container(
-              child: Column(
-                children: [
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.white,
-                        minimumSize: Size(250, 60),
-                        elevation: 2,
-                      ),
-                      onPressed: () {},
-                      child: Text(
-                        '<users name>',
-                        style: TextStyle(fontSize: 17, color: Colors.black),
-                      )),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.white,
-                        minimumSize: Size(250, 60),
-                        elevation: 2,
-                      ),
-                      onPressed: () {},
-                      child: Text(
-                        '<Email id>',
-                        style: TextStyle(fontSize: 17, color: Colors.black),
-                      )),
-                  const SizedBox(
-                    height: 200,
-                  ),
-                  ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.black,
-                        minimumSize: Size(175, 50),
-                        elevation: 2,
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => LoginScreen()));
-                      },
-                      child: Text(
-                        'Logout',
-                        style: TextStyle(fontSize: 17, color: Colors.white),
-                      )),
-                ],
-              ),
+            Column(
+              children: [
+                const SizedBox(
+                  height: 15,
+                ),
+                ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size(250, 60),
+                      elevation: 2,
+                    ),
+                    onPressed: () {},
+                    child: Text(
+                      '<User name>',
+                      style: TextStyle(fontSize: 17),
+                    )),
+                const SizedBox(
+                  height: 20,
+                ),
+                ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size(250, 60),
+                      elevation: 2,
+                    ),
+                    onPressed: () {},
+                    child: Text(
+                      '<User Email>',
+                      style: TextStyle(fontSize: 17),
+                    )),
+                const SizedBox(
+                  height: 200,
+                ),
+                ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size(175, 50),
+                      elevation: 2,
+                    ),
+                    onPressed: () async {
+                      SharedPreferences prefs =
+                          await SharedPreferences.getInstance();
+                      prefs.remove('email');
+                      _signOut(context);
+                    },
+                    child: Text(
+                      'Logout',
+                      style: TextStyle(fontSize: 17),
+                    )),
+              ],
             )
           ],
         ),
       ),
     );
+  }
+
+  Future<void> _signOut(BuildContext context) async {
+    await auth.signOut().then((_) {
+      Navigator.push(context,
+          new MaterialPageRoute(builder: (context) => new LoginScreenNew()));
+    });
   }
 }

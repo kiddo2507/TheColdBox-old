@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:thecold_box/screens/home_screen.dart';
+import 'package:thecold_box/screens/settings.dart';
+import 'package:thecold_box/screens/thecold_box.dart';
 
 class MenuPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
           onPressed: () {
@@ -15,7 +16,6 @@ class MenuPage extends StatelessWidget {
           },
           icon: Icon(
             Icons.arrow_back,
-            color: Colors.black,
           ),
         ),
       ),
@@ -39,69 +39,73 @@ class MenuPage extends StatelessWidget {
                 style: TextStyle(fontSize: 50),
               ),
             ),
-            Container(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 40),
-                child: Column(
-                  children: [
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.white,
-                          minimumSize: Size(250, 60),
-                          elevation: 2,
-                        ),
-                        onPressed: () {},
-                        child: Text(
-                          'The Cold Box',
-                          style: TextStyle(fontSize: 17, color: Colors.black),
-                        )),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.white,
-                          minimumSize: Size(250, 60),
-                          elevation: 2,
-                        ),
-                        onPressed: () {},
-                        child: Text(
-                          'Shopping List',
-                          style: TextStyle(fontSize: 17, color: Colors.black),
-                        )),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.white,
-                          minimumSize: Size(250, 60),
-                          elevation: 2,
-                        ),
-                        onPressed: () {},
-                        child: Text(
-                          'Settings',
-                          style: TextStyle(fontSize: 17, color: Colors.black),
-                        )),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.white,
-                          minimumSize: Size(250, 60),
-                          elevation: 2,
-                        ),
-                        onPressed: () {},
-                        child: Text(
-                          'TCB Website',
-                          style: TextStyle(fontSize: 17, color: Colors.black),
-                        )),
-                  ],
-                ),
+            Padding(
+              padding: const EdgeInsets.only(top: 40),
+              child: Column(
+                children: [
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: Size(250, 60),
+                        elevation: 2,
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => TheColdBox()));
+                      },
+                      child: Text(
+                        'The Cold Box',
+                        style: TextStyle(fontSize: 17),
+                      )),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: Size(250, 60),
+                        elevation: 2,
+                      ),
+                      onPressed: () {},
+                      child: Text(
+                        'Shopping List',
+                        style: TextStyle(fontSize: 17),
+                      )),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: Size(250, 60),
+                        elevation: 2,
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SettingsPage()));
+                      },
+                      child: Text(
+                        'Settings',
+                        style: TextStyle(fontSize: 17),
+                      )),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: Size(250, 60),
+                        elevation: 2,
+                      ),
+                      onPressed: () {},
+                      child: Text(
+                        'TCB Website',
+                        style: TextStyle(fontSize: 17),
+                      )),
+                ],
               ),
             )
           ],
