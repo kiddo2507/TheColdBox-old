@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:thecold_box/model/home_model.dart';
 import 'package:thecold_box/screens/calendar.dart';
+import 'package:thecold_box/screens/camerapage.dart';
 import 'package:thecold_box/screens/filter_page.dart';
 import 'package:thecold_box/screens/menu.dart';
 
@@ -85,7 +86,12 @@ class _TheColdBoxState extends State<TheColdBox> {
                       minimumSize: Size(150, 50),
                       elevation: 2,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CameraPage()));
+                    },
                     child: Text(
                       'Got More',
                       style: TextStyle(fontSize: 17),

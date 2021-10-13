@@ -43,7 +43,7 @@ dependencies:
   lite_rolling_switch: ^0.1.1
   path: ^1.8.0
   path_provider: ^2.0.5
-  provider: ^6.0.1
+  provider: ^6.0.0
   shared_preferences: ^2.0.8
   sqflite: ^2.0.0+4
 
