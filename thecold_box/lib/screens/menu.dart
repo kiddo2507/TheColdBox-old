@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:thecold_box/screens/home_screen.dart';
 import 'package:thecold_box/screens/settings.dart';
+import 'package:thecold_box/screens/shoppingcart.dart';
 import 'package:thecold_box/screens/thecold_box.dart';
 
 class MenuPage extends StatelessWidget {
@@ -28,7 +29,7 @@ class MenuPage extends StatelessWidget {
               child: SizedBox(
                   height: 100,
                   child: Image.asset(
-                    "assets/settings.png",
+                    "assets/menu.png",
                     fit: BoxFit.contain,
                   )),
             ),
@@ -69,7 +70,12 @@ class MenuPage extends StatelessWidget {
                         minimumSize: Size(250, 60),
                         elevation: 2,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ShoppingCart()));
+                      },
                       child: Text(
                         'Shopping List',
                         style: TextStyle(fontSize: 17),

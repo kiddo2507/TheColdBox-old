@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:thecold_box/screens/date_view.dart';
 
 class CalendarView extends StatefulWidget {
   const CalendarView({Key? key}) : super(key: key);
@@ -19,12 +20,22 @@ class _CalendarViewState extends State<CalendarView> {
   @override
   Widget build(BuildContext context) {
     return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-      ListTile(
-        title: Text(
-            'Date: ${pickedDate.day}/${pickedDate.month}/${pickedDate.year}'),
-        trailing: Icon(Icons.keyboard_arrow_down),
-        onTap: pickDate,
-      ),
+      SizedBox(
+          child: Column(children: [
+        ListTile(
+          title: Text(
+              'Date: ${pickedDate.day}/${pickedDate.month}/${pickedDate.year}'),
+          trailing: Icon(Icons.keyboard_arrow_down),
+          onTap: pickDate,
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: ElevatedButton(
+              child: Text('Click me'),
+              onPressed: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => DateView()))),
+        ),
+      ])),
     ]);
   }
 

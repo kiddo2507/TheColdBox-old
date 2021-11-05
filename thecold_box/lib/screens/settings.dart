@@ -36,9 +36,9 @@ class _SettingsPageState extends State<SettingsPage> {
               padding: const EdgeInsets.only(top: 50),
               child: SizedBox(
                   height: 100,
-                  child: Icon(
-                    Icons.settings,
-                    size: 100,
+                  child: Image.asset(
+                    "assets/setting.png",
+                    fit: BoxFit.contain,
                   )),
             ),
             Padding(

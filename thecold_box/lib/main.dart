@@ -9,15 +9,15 @@ import 'package:thecold_box/src/myapp.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences prefs = await SharedPreferences.getInstance();
-  var _email = prefs.getString('email');
+  var email = prefs.getString('email');
   await Firebase.initializeApp();
   runApp(
     ChangeNotifierProvider(
       create: (context) => ThemeProvider(),
       builder: (context, _) => MyApp(),
+      //MaterialApp(home: _email == null ? LoginScreenNew() : HomePage()),
     ),
   );
-  //MaterialApp(home: _email == null ? LoginScreenNew() : HomePage()));
 }
 
 

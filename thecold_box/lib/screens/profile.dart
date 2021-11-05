@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:thecold_box/screens/login.dart';
-import 'package:thecold_box/wontuse/login_screen.dart';
 
 import 'home_screen.dart';
 
@@ -35,7 +34,7 @@ class ProfilePage extends StatelessWidget {
               child: SizedBox(
                   height: 100,
                   child: Image.asset(
-                    "assets/avatar.png",
+                    "assets/woman.png",
                     fit: BoxFit.contain,
                   )),
             ),

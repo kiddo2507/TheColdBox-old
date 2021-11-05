@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:thecold_box/screens/home_screen.dart';
-import 'package:thecold_box/screens/verify.dart';
 
 class RegistrationScreenNew extends StatefulWidget {
   const RegistrationScreenNew({Key? key}) : super(key: key);

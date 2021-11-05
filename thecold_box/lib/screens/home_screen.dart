@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
                 MaterialPageRoute(builder: (context) => ProfilePage()));
           },
           icon: Icon(
-            Icons.person,
+            Icons.person_outlined,
             size: 40,
           ),
         ),

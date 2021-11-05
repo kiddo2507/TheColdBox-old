@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:thecold_box/model/home_model.dart';
-import 'package:thecold_box/screens/calendar.dart';
 import 'package:thecold_box/screens/camerapage.dart';
+import 'package:thecold_box/screens/date_view.dart';
 import 'package:thecold_box/screens/filter_page.dart';
 import 'package:thecold_box/screens/menu.dart';
 
@@ -106,11 +106,9 @@ class _TheColdBoxState extends State<TheColdBox> {
                       elevation: 2,
                     ),
                     onPressed: () {
-                      // Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (context) => CalendarView()));
-                      openDialogueBox(context);
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => DateView()));
+                      //openDialogueBox(context);
                     },
                     child: Text(
                       'Calendar view',
@@ -154,17 +152,17 @@ class _TheColdBoxState extends State<TheColdBox> {
           list.useby,
         ),
       );
-  openDialogueBox(BuildContext context) {
-    return showDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            title: Text('Calendar'),
-            content: Container(
-              height: 100,
-              child: CalendarView(),
-            ),
-          );
-        });
-  }
+  // openDialogueBox(BuildContext context) {
+  //   return showDialog(
+  //       context: context,
+  //       builder: (context) {
+  //         return AlertDialog(
+  //           title: Text('Calendar'),
+  //           content: Container(
+  //             height: 200,
+  //             child: CalendarView(),
+  //           ),
+  //         );
+  //       });
+  // }
 }

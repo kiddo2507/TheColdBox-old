@@ -23,7 +23,7 @@ class _CameraPageState extends State<CameraPage> {
     try {
       _cameras = await availableCameras();
 
-      _controller = CameraController(_cameras[0], ResolutionPreset.medium);
+      _controller = CameraController(_cameras[0], ResolutionPreset.veryHigh);
       await _controller.initialize();
     } catch (_) {}
     if (!mounted) return;
