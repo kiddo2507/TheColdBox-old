@@ -16,17 +16,15 @@ class _TheColdBoxState extends State<TheColdBox> {
   final Color? mainColor = Colors.blueGrey[50];
   bool value = false;
   final list = [
-    HomeModel(id: 'Fruit', name: 'Apple', useby: '03/08'),
-    HomeModel(id: 'Vegetable', name: 'Potato', useby: '03/08'),
-    HomeModel(id: 'Vegetable', name: 'Drumsticks', useby: '04/08'),
-    HomeModel(id: 'Vegetable', name: 'Pumpkin', useby: '06/08'),
-    HomeModel(id: 'Fruit', name: 'Banana', useby: '06/08'),
-    HomeModel(id: 'Fruit', name: 'Tomatoes', useby: '06/08'),
-    HomeModel(id: 'Vegetable', name: 'Carrot', useby: '06/08'),
-    HomeModel(id: 'Vegetable', name: 'Ladyfinger', useby: '10/08'),
-    HomeModel(id: 'Fruit', name: 'Strawberry', useby: '10/08'),
-    HomeModel(id: 'Vegetable', name: 'Brinjal', useby: '10/08'),
-    HomeModel(id: 'Vegetable', name: 'Cucumber', useby: '10/08'),
+    HomeModel(id: 'Fruit', name: output),
+    //HomeModel(id: 'Vegetable', name: 'Pumpkin', useby: '06/08'),
+    //HomeModel(id: 'Fruit', name: 'Banana', useby: '06/08'),
+    //HomeModel(id: 'Fruit', name: 'Tomatoes', useby: '06/08'),
+    //HomeModel(id: 'Vegetable', name: 'Carrot', useby: '06/08'),
+    //HomeModel(id: 'Vegetable', name: 'Ladyfinger', useby: '10/08'),
+    //HomeModel(id: 'Fruit', name: 'Strawberry', useby: '10/08'),
+    //HomeModel(id: 'Vegetable', name: 'Brinjal', useby: '10/08'),
+    //HomeModel(id: 'Vegetable', name: 'Cucumber', useby: '10/08'),
   ];
 
   @override
@@ -108,6 +106,7 @@ class _TheColdBoxState extends State<TheColdBox> {
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => DateView()));
+                      print(output);
                       //openDialogueBox(context);
                     },
                     child: Text(
@@ -148,9 +147,9 @@ class _TheColdBoxState extends State<TheColdBox> {
             fontSize: 18,
           ),
         ),
-        subtitle: Text(
-          list.useby,
-        ),
+        // subtitle: Text(
+        //   list.useby,
+        // ),
       );
   // openDialogueBox(BuildContext context) {
   //   return showDialog(

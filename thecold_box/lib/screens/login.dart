@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:thecold_box/screens/home_screen.dart';
 import 'package:thecold_box/screens/register.dart';
 import 'package:thecold_box/screens/reset.dart';
+import 'package:thecold_box/wontuse/registration_screen.dart';
 
 class LoginScreenNew extends StatefulWidget {
   @override
@@ -153,7 +154,7 @@ class _LoginScreenNewState extends State<LoginScreenNew> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        RegistrationScreenNew()));
+                                        RegistrationScreen()));
                           },
                           child: Text(
                             "SignUp",

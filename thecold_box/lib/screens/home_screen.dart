@@ -20,11 +20,11 @@ class _HomePageState extends State<HomePage> {
   var currentItemSelected = 'Today';
   bool value = false;
   final list = [
-    HomeModel(id: 'Fruit', name: 'Apple', useby: '03/08'),
-    HomeModel(id: 'Vegetable', name: 'Potato', useby: '03/08'),
-    HomeModel(id: 'Vegetable', name: 'Drumsticks', useby: '04/08'),
-    HomeModel(id: 'Vegetable', name: 'Pumpkin', useby: '06/08'),
-    HomeModel(id: 'Fruit', name: 'Banana', useby: '06/08'),
+    HomeModel(id: 'Fruit', name: 'Apple'),
+    HomeModel(id: 'Vegetable', name: 'Potato'),
+    HomeModel(id: 'Vegetable', name: 'Drumsticks'),
+    HomeModel(id: 'Vegetable', name: 'Pumpkin'),
+    HomeModel(id: 'Fruit', name: 'Banana'),
   ];
 
   @override
@@ -163,8 +163,8 @@ class _HomePageState extends State<HomePage> {
             fontSize: 18,
           ),
         ),
-        subtitle: Text(
-          list.useby,
-        ),
+        // subtitle: Text(
+        //   list.useby,
+        // ),
       );
 }

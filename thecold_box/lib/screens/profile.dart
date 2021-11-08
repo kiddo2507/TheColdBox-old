@@ -1,12 +1,15 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:thecold_box/screens/login.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'home_screen.dart';
 
 class ProfilePage extends StatelessWidget {
   final auth = FirebaseAuth.instance;
+  final firestore = FirebaseFirestore;
   // User user;
 
   @override
@@ -58,9 +61,26 @@ class ProfilePage extends StatelessWidget {
                     ),
                     onPressed: () {},
                     child: Text(
-                      '<User name>',
+                      'Shruti',
                       style: TextStyle(fontSize: 17),
-                    )),
+                    )
+                    // child: StreamBuilder(
+                    //   stream: firestore.instance.collection('users').snapshots(),
+                    //   builder: (BuildContext context,
+                    //       AsyncSnapshot<QuerySnapshot> snapshot) {
+                    //     if (!snapshot.hasData) {
+                    //       return Text('No Value');
+                    //     }
+                    //     return ListView(
+                    //       children: [
+                    //         snapshot.data!.map((document) {
+                    //           return Text(document['firstName']);
+                    //         }).toList(),
+                    //       ],
+                    //     );
+                    //   },
+                    // ),
+                    ),
                 const SizedBox(
                   height: 20,
                 ),
@@ -71,7 +91,7 @@ class ProfilePage extends StatelessWidget {
                     ),
                     onPressed: () {},
                     child: Text(
-                      '<User Email>',
+                      'shrutisinha645@gmail.com',
                       style: TextStyle(fontSize: 17),
                     )),
                 const SizedBox(

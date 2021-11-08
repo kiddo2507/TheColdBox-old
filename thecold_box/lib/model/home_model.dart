@@ -1,12 +1,12 @@
 class HomeModel {
   final String id;
   final String name;
-  final String useby;
+  //final String useby;
   bool isUsed;
 
   HomeModel(
       {required this.id,
       required this.name,
-      required this.useby,
+      //required this.useby,
       this.isUsed = false});
 }
