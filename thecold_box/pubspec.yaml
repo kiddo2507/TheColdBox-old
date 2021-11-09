@@ -44,12 +44,14 @@ dependencies:
   google_fonts: ^2.1.0
   image_picker: ^0.8.4+2
   lite_rolling_switch: ^0.1.1
+  lottie: ^1.2.1
   path: ^1.8.0
   path_provider: ^2.0.5
   provider: ^6.0.0
   shared_preferences: ^2.0.8
   sqflite: ^2.0.0+4
   tflite: ^1.1.2
+  url_launcher: ^6.0.12
 
 dev_dependencies:
   flutter_lints: ^1.0.0
@@ -79,6 +81,10 @@ flutter:
     - assets/woman.png
     - assets/labels.txt
     - assets/model.tflite
+    - assets/splash-screen.json
+    - assets/cart.json
+    - assets/settings.json
+    - assets/menu.json
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see

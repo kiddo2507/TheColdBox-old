@@ -27,6 +27,7 @@ class MyThemes {
     primaryColor: Colors.black,
     buttonTheme: ButtonThemeData(buttonColor: Color.fromRGBO(49, 39, 79, 1)),
     iconTheme: IconThemeData(color: Colors.purple.shade200, opacity: 0.8),
+    backgroundColor: Colors.grey.shade900,
   );
 
   static final lightTheme = ThemeData(
@@ -34,6 +35,7 @@ class MyThemes {
     colorScheme: ColorScheme.light(),
     primaryColor: Colors.white,
     iconTheme: IconThemeData(color: Colors.red, opacity: 0.8),
+    backgroundColor: Colors.white,
   );
 }
 

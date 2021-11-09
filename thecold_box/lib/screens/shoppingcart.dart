@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:thecold_box/model/shopping_cart_model.dart';
 import 'package:thecold_box/screens/list_item.dart';
 import 'package:thecold_box/screens/list_item_widget.dart';
@@ -35,16 +36,11 @@ class _ShoppingCartState extends State<ShoppingCart> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 50),
-              child: SizedBox(
-                  height: 100,
-                  child: Image.asset(
-                    "assets/shopping-bag.png",
-                    fit: BoxFit.contain,
-                  )),
+              padding: const EdgeInsets.only(top: 20),
+              child: Lottie.asset('assets/cart.json', height: 180),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 30, bottom: 50),
+              padding: const EdgeInsets.only(top: 10, bottom: 10),
               child: Text(
                 'Shopping Cart',
                 style: TextStyle(fontSize: 50),
@@ -66,14 +62,27 @@ class _ShoppingCartState extends State<ShoppingCart> {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: insertItem,
+        onPressed: () {
+          createAlertDialog(context).then((onValue) {
+            final newIndex = 1;
+            final newItem = ListItem(title: onValue);
+
+            items.add(newItem);
+
+            items.insert(newIndex, newItem);
+            ListKey.currentState!.insertItem(
+              newIndex,
+              duration: Duration(milliseconds: 400),
+            );
+          });
+        },
       ),
     );
   }
 
   void insertItem() {
     final newIndex = 1;
-    final newItem = (List.of(listItems)..shuffle()).first;
+    final newItem = (List.of(listItems)..shuffle()).last;
 
     items.insert(newIndex, newItem);
     ListKey.currentState!.insertItem(
@@ -92,5 +101,28 @@ class _ShoppingCartState extends State<ShoppingCart> {
           item: removedItem, animation: animation, onClicked: () {}),
       duration: Duration(milliseconds: 400),
     );
+  }
+
+  Future createAlertDialog(BuildContext context) {
+    TextEditingController customController = TextEditingController();
+
+    return showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('What do you want to add?'),
+            content: TextField(
+              controller: customController,
+            ),
+            actions: [
+              ElevatedButton(
+                child: Text('Proceed'),
+                onPressed: () {
+                  Navigator.of(context).pop(customController.text.toString());
+                },
+              ),
+            ],
+          );
+        });
   }
 }

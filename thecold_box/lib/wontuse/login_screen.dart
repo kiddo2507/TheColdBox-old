@@ -5,7 +5,7 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:thecold_box/screens/home_screen.dart';
-import 'package:thecold_box/wontuse/registration_screen.dart';
+import 'package:thecold_box/screens/registration_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);

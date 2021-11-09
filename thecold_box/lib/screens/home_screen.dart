@@ -20,11 +20,7 @@ class _HomePageState extends State<HomePage> {
   var currentItemSelected = 'Today';
   bool value = false;
   final list = [
-    HomeModel(id: 'Fruit', name: 'Apple'),
     HomeModel(id: 'Vegetable', name: 'Potato'),
-    HomeModel(id: 'Vegetable', name: 'Drumsticks'),
-    HomeModel(id: 'Vegetable', name: 'Pumpkin'),
-    HomeModel(id: 'Fruit', name: 'Banana'),
   ];
 
   @override

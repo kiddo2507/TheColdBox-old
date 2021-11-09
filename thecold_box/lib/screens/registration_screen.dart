@@ -27,6 +27,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
     // first name field
     final firstNameField = TextFormField(
       autofocus: false,
@@ -182,7 +183,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     );
 
     return Scaffold(
-        backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
@@ -197,37 +197,54 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         body: Center(
           child: SingleChildScrollView(
             child: Container(
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.all(36.0),
-                child: Form(
-                  key: _formKey,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      SizedBox(
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.all(36.0),
+                      child: SizedBox(
                         height: 180,
                         child: Image.asset(
                           "assets/og_logo.png",
                           fit: BoxFit.contain,
                         ),
                       ),
-                      SizedBox(height: 45),
-                      firstNameField,
-                      SizedBox(height: 20),
-                      secondNameField,
-                      SizedBox(height: 20),
-                      emailField,
-                      SizedBox(height: 20),
-                      passwordField,
-                      SizedBox(height: 20),
-                      confirmPasswordField,
-                      SizedBox(height: 20),
-                      signUpButton,
-                      SizedBox(height: 15),
-                    ],
-                  ),
+                    ),
+                    SizedBox(height: 30),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 9.5, right: 9.5),
+                      child: firstNameField,
+                    ),
+                    SizedBox(height: 20),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 9.5, right: 9.5),
+                      child: secondNameField,
+                    ),
+                    SizedBox(height: 20),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 9.5, right: 9.5),
+                      child: emailField,
+                    ),
+                    SizedBox(height: 20),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 9.5, right: 9.5),
+                      child: passwordField,
+                    ),
+                    SizedBox(height: 20),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 9.5, right: 9.5),
+                      child: confirmPasswordField,
+                    ),
+                    SizedBox(height: 20),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 9.5, right: 9.5),
+                      child: signUpButton,
+                    ),
+                    SizedBox(height: 15),
+                  ],
                 ),
               ),
             ),

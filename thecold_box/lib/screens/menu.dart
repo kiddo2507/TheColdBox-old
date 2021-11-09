@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:thecold_box/screens/home_screen.dart';
 import 'package:thecold_box/screens/settings.dart';
 import 'package:thecold_box/screens/shoppingcart.dart';
 import 'package:thecold_box/screens/thecold_box.dart';
+import 'package:url_launcher/link.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MenuPage extends StatelessWidget {
   @override
@@ -25,13 +28,12 @@ class MenuPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 50),
-              child: SizedBox(
-                  height: 100,
-                  child: Image.asset(
-                    "assets/menu.png",
-                    fit: BoxFit.contain,
-                  )),
+              padding: const EdgeInsets.only(top: 30),
+              child: Lottie.asset('assets/menu.json', height: 150),
+              // child: Image.asset(
+              //   "assets/menu.png",
+              //   fit: BoxFit.contain,
+              // ),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 30),
@@ -101,16 +103,22 @@ class MenuPage extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        minimumSize: Size(250, 60),
-                        elevation: 2,
+                  InkWell(
+                      child: TextButton(
+                        style: TextButton.styleFrom(
+                          backgroundColor: Color(0xFF6300EC),
+                          padding: const EdgeInsets.fromLTRB(74, 20, 74, 20),
+                          textStyle: const TextStyle(fontSize: 17),
+                        ),
+                        onPressed: () => launch(
+                            'https://docs.flutter.io/flutter/services/UrlLauncher-class.html'),
+                        child: const Text(
+                          'TBC Website',
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
-                      onPressed: () {},
-                      child: Text(
-                        'TCB Website',
-                        style: TextStyle(fontSize: 17),
-                      )),
+                      onTap: () => launch(
+                          'https://docs.flutter.io/flutter/services/UrlLauncher-class.html')),
                 ],
               ),
             )

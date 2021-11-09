@@ -1,7 +1,6 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:tflite/tflite.dart';
-import 'package:thecold_box/model/item_model.dart';
 import 'package:thecold_box/screens/thecold_box.dart';
 
 import '../main.dart';
@@ -58,10 +57,6 @@ class _CameraPageState extends State<CameraPage> {
       });
     }
   }
-
-  // void newItem(String? name){
-  //   var item = new Item(name: output);
-  // }
 
   loadmodel() async {
     await Tflite.loadModel(

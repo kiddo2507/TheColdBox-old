@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:thecold_box/screens/home_screen.dart';
-import 'package:thecold_box/screens/register.dart';
+import 'package:thecold_box/screens/registration_screen.dart';
 import 'package:thecold_box/screens/reset.dart';
-import 'package:thecold_box/wontuse/registration_screen.dart';
+import 'package:thecold_box/screens/registration_screen.dart';
 
 class LoginScreenNew extends StatefulWidget {
   @override

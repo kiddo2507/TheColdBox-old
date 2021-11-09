@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:thecold_box/provider/theme_provider.dart';
+import 'package:thecold_box/screens/changenotif.dart';
 import 'package:thecold_box/screens/changetheme.dart';
 import 'package:thecold_box/screens/menu.dart';
 
@@ -33,13 +35,11 @@ class _SettingsPageState extends State<SettingsPage> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 50),
-              child: SizedBox(
-                  height: 100,
-                  child: Image.asset(
-                    "assets/setting.png",
-                    fit: BoxFit.contain,
-                  )),
+              padding: const EdgeInsets.only(top: 30),
+              child: Lottie.asset(
+                'assets/settings.json',
+                height: 120,
+              ),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 30),
@@ -59,11 +59,30 @@ class _SettingsPageState extends State<SettingsPage> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.all(10.0),
-                      child: Text('User System preference'),
+                      child: Text(
+                        'Dark Theme',
+                        style: TextStyle(fontSize: 17),
+                      ),
                     ),
                     ChangeThemeButtonWidget(),
                   ],
                 ),
+              ],
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Text(
+                    'Notifications',
+                    style: TextStyle(fontSize: 17),
+                  ),
+                ),
+                changeNotif(),
               ],
             ),
             const SizedBox(
@@ -76,7 +95,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 ),
                 onPressed: () {},
                 child: Text(
-                  '<Option 1>',
+                  'Recent Scans',
                   style: TextStyle(fontSize: 17),
                 )),
             const SizedBox(
@@ -89,7 +108,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 ),
                 onPressed: () {},
                 child: Text(
-                  '<Option 2>',
+                  'Help',
                   style: TextStyle(fontSize: 17),
                 )),
             const SizedBox(
@@ -102,7 +121,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 ),
                 onPressed: () {},
                 child: Text(
-                  '<Option 3>',
+                  'Spread a word',
                   style: TextStyle(fontSize: 17),
                 )),
             const SizedBox(
