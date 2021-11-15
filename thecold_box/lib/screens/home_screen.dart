@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:lottie/lottie.dart';
 import 'package:thecold_box/model/home_model.dart';
 import 'package:thecold_box/screens/camerapage.dart';
 import 'package:thecold_box/screens/menu.dart';
@@ -21,6 +22,9 @@ class _HomePageState extends State<HomePage> {
   bool value = false;
   final list = [
     HomeModel(id: 'Vegetable', name: 'Potato'),
+    HomeModel(id: 'Fruit', name: 'Strawberry'),
+    HomeModel(id: 'Vegetable', name: 'Brinjal'),
+    HomeModel(id: 'Vegetable', name: 'Cucumber'),
   ];
 
   @override
@@ -55,10 +59,10 @@ class _HomePageState extends State<HomePage> {
 
       //Body
       body: Container(
-        margin: EdgeInsets.all(20.0),
+        margin: EdgeInsets.only(top: 20, left: 20, bottom: 20),
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Padding(
                   padding: EdgeInsets.all(10.0),
@@ -84,9 +88,30 @@ class _HomePageState extends State<HomePage> {
                 value: currentItemSelected,
               ),
               Expanded(
-                child: ListView(
-                  shrinkWrap: true,
-                  children: [...list.map(buildSingleCheckbox).toList()],
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      backgroundBlendMode: BlendMode.softLight),
+                  child: Stack(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 170, top: 260),
+                        child: Container(
+                          decoration: BoxDecoration(shape: BoxShape.circle),
+                          child: Positioned(
+                              child: Lottie.asset(
+                            'assets/mushroom-bros.json',
+                          )),
+                        ),
+                      ),
+                      Positioned(
+                        child: ListView(
+                          shrinkWrap: true,
+                          children: [...list.map(buildSingleCheckbox).toList()],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               ElevatedButton(

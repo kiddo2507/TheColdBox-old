@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
             themeMode: themeProvider.themeMode,
             theme: MyThemes.lightTheme,
             darkTheme: MyThemes.darkTheme,
-            //home: Lottie.asset('assets/splash-screen.json')
+            //home: LoginScreenNew()
             home: AnimatedSplashScreen(
               splash: Lottie.asset('assets/splash-screen.json'),
               splashIconSize: 1000,

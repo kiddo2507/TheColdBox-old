@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:lottie/lottie.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:thecold_box/screens/login.dart';
@@ -35,15 +36,11 @@ class ProfilePage extends StatelessWidget {
               //icon
               padding: const EdgeInsets.only(top: 50),
               child: SizedBox(
-                  height: 100,
-                  child: Image.asset(
-                    "assets/woman.png",
-                    fit: BoxFit.contain,
-                  )),
+                  height: 140, child: Lottie.asset('assets/profile.json')),
             ),
             Padding(
               //name of the page
-              padding: const EdgeInsets.only(top: 30),
+              padding: const EdgeInsets.only(top: 30, bottom: 10),
               child: Text(
                 'User profile',
                 style: TextStyle(fontSize: 50),

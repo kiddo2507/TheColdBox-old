@@ -35,14 +35,17 @@ class _SettingsPageState extends State<SettingsPage> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 30),
-              child: Lottie.asset(
-                'assets/settings.json',
-                height: 120,
+              padding: const EdgeInsets.only(top: 10),
+              child: Container(
+                //decoration: BoxDecoration(color: Colors.red),
+                child: Lottie.asset(
+                  'assets/settings.json',
+                  height: 190,
+                ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 30),
+              padding: const EdgeInsets.only(top: 10),
               child: Text(
                 'Settings',
                 style: TextStyle(fontSize: 50),

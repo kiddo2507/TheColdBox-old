@@ -58,6 +58,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter.
@@ -85,6 +86,17 @@ flutter:
     - assets/cart.json
     - assets/settings.json
     - assets/menu.json
+    - assets/cute-fruit.json
+    - assets/back.jpg
+    - assets/seedling.json
+    - assets/mushroom-bros.json
+    - assets/walking-broccoli.json
+    - assets/walking-avocado.json
+    - assets/calendar.json
+    - assets/walking-orange.json
+    - assets/avocardo.json
+    - assets/tomato-hanging.json
+    - assets/profile.json
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see
