@@ -1,27 +1,29 @@
+import 'package:thecold_box/model/home_model.dart';
+
 class CategoryFilter {
-  var id;
+  var id1;
   bool isUsed;
 
   CategoryFilter({
-    required this.id,
+    required this.id1,
     this.isUsed = false,
   });
 
   CategoryFilter copyWith({
-    int? id,
+    var value2,
     bool? isUsed,
   }) {
     return CategoryFilter(
-      id: id ?? this.id,
+      id1: value2 ?? this.id1,
       isUsed: isUsed ?? this.isUsed,
     );
   }
 
   @override
   List<Object?> get props => [
-        id,
+        id1,
         isUsed,
       ];
 
-  //static List<CategoryFilter> filters = HomeModel.id.map(());
+  //static List<CategoryFilter> filters = HomeModel.;
 }

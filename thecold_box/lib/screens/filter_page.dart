@@ -11,11 +11,11 @@ class FilterPage extends StatefulWidget {
 
 class _FilterPageState extends State<FilterPage> {
   final list = [
-    CategoryFilter(id: 'Fruit'),
-    CategoryFilter(id: 'Vegetable'),
-    CategoryFilter(id: 'Today'),
-    CategoryFilter(id: 'Tomorrow'),
-    CategoryFilter(id: '1 Week')
+    CategoryFilter(id1: 'Fruit'),
+    CategoryFilter(id1: 'Vegetable'),
+    CategoryFilter(id1: 'Today'),
+    CategoryFilter(id1: 'Tomorrow'),
+    CategoryFilter(id1: '1 Week')
   ];
   @override
   Widget build(BuildContext context) {
@@ -75,7 +75,7 @@ class _FilterPageState extends State<FilterPage> {
           onChanged: (value) => onClicked(),
         ),
         title: Text(
-          list.id,
+          list.id1,
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 18,

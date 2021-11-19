@@ -17,14 +17,13 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   //adding some variable
   final Color? mainColor = Colors.blueGrey[50];
-  final items = ['Today', 'Tomorrow', '1-3 days'];
+  final items = ['1-3 days', 'Today', 'Tomorrow'];
+  var idk = Useby();
+  final Map data = {'apple': 3, 'banana': 2, 'onion': 8, 'eggplant': 4};
   var currentItemSelected = 'Today';
   bool value = false;
   final list = [
-    HomeModel(id: 'Vegetable', name: 'Potato'),
-    HomeModel(id: 'Fruit', name: 'Strawberry'),
-    HomeModel(id: 'Vegetable', name: 'Brinjal'),
-    HomeModel(id: 'Vegetable', name: 'Cucumber'),
+    HomeModel(id: Filter(), name: output, useby: Useby()),
   ];
 
   @override
@@ -184,8 +183,8 @@ class _HomePageState extends State<HomePage> {
             fontSize: 18,
           ),
         ),
-        // subtitle: Text(
-        //   list.useby,
-        // ),
+        subtitle: Text(
+          list.id.toString(),
+        ),
       );
 }

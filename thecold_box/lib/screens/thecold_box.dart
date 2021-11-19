@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:thecold_box/model/home_model.dart';
 import 'package:thecold_box/screens/camerapage.dart';
 import 'package:thecold_box/screens/date_view.dart';
@@ -15,10 +13,12 @@ class TheColdBox extends StatefulWidget {
 class _TheColdBoxState extends State<TheColdBox> {
   final Color? mainColor = Colors.blueGrey[50];
   bool value = false;
+  var idk = Useby();
+  final Map = {'apple': 3, 'banana': 2, 'onion': 8, 'eggplant': 4};
   final list = [
-    HomeModel(id: 'Vegetable', name: 'Pumpkin'),
-    HomeModel(id: 'Fruit', name: 'Banana'),
-    HomeModel(id: 'Fruit', name: output),
+    HomeModel(id: Filter(), name: output, useby: Useby()),
+    // HomeModel(id: 'Vegetable', name: 'Pumpkin'),
+    // HomeModel(id: 'Fruit', name: 'Banana'),
     //HomeModel(id: 'Fruit', name: 'Tomatoes', useby: '06/08'),
     //HomeModel(id: 'Vegetable', name: 'Carrot', useby: '06/08'),
     //HomeModel(id: 'Vegetable', name: 'Ladyfinger', useby: '10/08'),
@@ -90,7 +90,6 @@ class _TheColdBoxState extends State<TheColdBox> {
                           context,
                           MaterialPageRoute(
                               builder: (context) => CameraPage()));
-                      print(width);
                     },
                     child: Text(
                       'Got More',
@@ -148,9 +147,9 @@ class _TheColdBoxState extends State<TheColdBox> {
             fontSize: 18,
           ),
         ),
-        // subtitle: Text(
-        //   list.useby,
-        // ),
+        subtitle: Text(
+          list.id.toString(),
+        ),
       );
   // openDialogueBox(BuildContext context) {
   //   return showDialog(
@@ -165,4 +164,5 @@ class _TheColdBoxState extends State<TheColdBox> {
   //         );
   //       });
   // }
+
 }

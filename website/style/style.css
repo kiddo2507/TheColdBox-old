@@ -1,0 +1,282 @@
+/**********Basics**********/
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0,0,0,0.8) ), url(img/bg.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.container{
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 8% 0 8%;
+}
+
+/**********Logo and name of website**********/
+
+.logo{
+  width: 150px;
+  cursor: pointer;
+}
+
+/**********Navigation Bar**********/
+
+.wiki-btn{
+  display: none;
+}
+
+nav{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 5px 0;
+}
+
+nav ul{
+  flex: 1;
+  text-align: right;
+}
+
+ul li{
+  display: inline-block;
+  list-style: none;
+  margin: 10px 30px;
+}
+
+ul li a{
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  position: relative;
+}
+
+ul li a::after{
+  content: '';
+  width: 0;
+  height: 3px;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  transition: width 0.3s;
+}
+
+ul li a:hover::after{
+  width: 50%;
+}
+
+/**********Content**********/
+
+.text-box{
+  color: #fff;
+}
+
+.text-box p{
+  font-size: 35px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.315);
+  -webkit-text-stroke: 1px #fff;
+  -webkit-background-clip: text;
+  background-clip: border-box;
+  background-position: 0 0 ;
+}
+
+.text-box h1{
+  font-size: 90px;
+  line-height: 100px;
+}
+
+/**********Inner Working**********/
+
+#inner-work{
+  width: 800px;
+  height: max-content;
+  margin: 30px 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#inner-work h3{
+  padding: 10px 0;
+  color: rgba(237, 211, 105, 0.733);
+  font-size: 25px;
+}
+
+/**********carousel**********/
+
+.maindiv{
+  width: 40%;
+  height: 400px;
+  position: relative;
+  background-image: url(img/pri.jpg);
+  background-size: 100% 100%;
+  box-shadow: 1px 2px 10px 5px black;
+  animation: slider 10s ease-in infinite;
+  transition: 5s;
+}
+
+.maindiv:hover{
+  animation-play-state: paused;
+}
+
+/**********carousel animation**********/
+
+@keyframes slider{
+  0%{background-image: url(img/pri.jpg);}
+  35%{background-image: url(img/shru.jpg);}
+  75%{background-image: url(img/naaz.jpeg);}
+}
+
+/**********Contact me**********/
+
+#contact{
+  background-color: rgba(0, 0, 0, 0.788);
+  width: 100%;
+  color: white;
+  position: absolute;
+  bottom: 0;
+}
+
+
+/**********Wiki page**********/
+
+.column{
+  width: 85%;
+  height: 450px;
+  margin: 10px 0;
+}
+
+.fruits{
+  width: 44%;
+  margin: 40px 25px 20px;
+  height: 300px;
+  background-image: linear-gradient( rgba(0, 0, 0, 0.363), rgba(0,0,0,0.363) ), url(img/fruits2.png);
+  background-size: cover; 
+  background-position: center;
+  float: left;
+  border-radius: 30px;
+}
+
+.veges{
+  width: 44%;
+  margin: 40px 25px 20px;
+  height: 300px;
+  background-image: linear-gradient( rgba(0, 0, 0, 0.363), rgba(0, 0, 0, 0.363)), url(img/veges.png);
+  background-size: cover;
+  background-position: center;
+  float: left;
+  border-radius: 30px;
+}
+
+.column h3{
+  font-size: 30px;
+  text-align: center;
+  padding-top: 35%;
+}
+
+h5{
+  color: white;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+/**********Responsive**********/
+
+@media (max-width:700px) {
+
+  .container{
+    width: 100%;
+    padding: 0;
+  }
+
+  .logo{
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    flex-basis: 100%;
+  }
+
+  nav ul{
+    display: none;
+  }
+
+  .text-box{
+    width: 100%;
+    margin:0%;
+  }
+
+  .text-box p{
+    font-size: 30px;
+    line-height: 25px;
+  }
+
+  .text-box h1{
+    font-size: 50px;
+    line-height: normal;
+  }
+
+  #inner-work{
+    width: 100%;
+    height: max-content;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .iframe-container{
+    position: relative;
+    width: 90%;
+    padding-bottom: 56.25%; 
+    height: 0;
+  }
+  .iframe-container iframe{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .wiki-btn{
+    display: block;
+    margin-top: 20px;
+  }
+
+  .wiki-btn a{
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .maindiv{
+    height: 200px;
+    width: 80%;
+  }
+
+  .fruits{
+    width: 85%;
+    margin: 50px 7% 0;
+  }
+
+  .veges{
+    width: 85%;
+    margin: 50px 7% 0; 
+  }
+
+  .column{
+    width: 100%;
+    height: 750px;
+  }
+
+  .column h3{
+    font-size: 25px;
+    text-align: center;
+    padding-top: 45%;
+  }
+}

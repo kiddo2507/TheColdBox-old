@@ -1,0 +1,150 @@
+/**********Basics**********/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body{
+    background-image: linear-gradient( rgba(0, 0, 0, 0.315), rgba(0,0,0,0.315) ), url(img/brooke-lark-08bOYnH_r_E-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 8% 0 8%;
+}
+
+/**********Logo and name of website**********/
+
+.logo{
+    width: 150px;
+    cursor: pointer;
+}
+
+/**********Navigation Bar**********/
+
+.wiki-btn{
+    display: none;
+}
+
+nav{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5px 0;
+}
+
+nav ul{
+    flex: 1;
+    text-align: right;
+}
+
+ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 30px;
+}
+
+ul li a{
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+    position: relative;
+}
+
+ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    transition: width 0.3s;
+}
+
+ul li a:hover::after{
+    width: 50%;
+}
+
+/**********Content**********/
+
+.text-box{
+    color: black;
+    float: right;
+  }
+  
+  .text-box p{
+    font-size: 35px;
+    font-weight: 600;
+    color: rgba(3, 3, 3, 0.315);
+    -webkit-text-stroke: 1px black;
+    -webkit-background-clip: text;
+    background-clip: border-box;
+    background-position: 0 0 ;
+  }
+  
+  .text-box h1{
+    font-size: 90px;
+    line-height: 100px;
+  }
+
+  .f1{
+      width: 60%;
+      height: max-content;
+      float: right;
+      text-align: left;
+      font-size: 18px;
+      color: black;
+      margin: 10px;
+      border: 1px solid black;
+  }
+
+@media (max-width:700px) {
+
+    body{
+        background-size: cover;
+    }
+
+    .container{
+        width: 100%;
+        padding: 0;
+    }
+
+    .logo{
+        display: flex;
+        justify-content: center;
+        width: 100px;
+        flex-basis: 100%;
+      }
+
+    nav ul{
+        display: none;
+    }
+    
+    .wiki-btn{
+        display: block;
+        margin-top: 20px;
+    }
+    
+    .wiki-btn a{
+        text-decoration: none;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .f1{
+        width: 80%;
+        height: max-content;
+        text-align: left;
+        font-size: 18px;
+        color: black;
+        margin: 10px;
+    }
+}
