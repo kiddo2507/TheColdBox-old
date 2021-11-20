@@ -23,6 +23,7 @@ class _HomePageState extends State<HomePage> {
   var currentItemSelected = 'Today';
   bool value = false;
   final list = [
+    //HomeModel(id: Filter(), name: 'Use camera to add', useby: Useby()),
     HomeModel(id: Filter(), name: output, useby: Useby()),
   ];
 
