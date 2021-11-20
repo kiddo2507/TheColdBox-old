@@ -97,6 +97,10 @@ flutter:
     - assets/avocardo.json
     - assets/tomato-hanging.json
     - assets/profile.json
+    - assets/bg.json
+    - assets/logo-removebg-preview.png
+    - assets/og_bg.png
+    - assets/bg.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see

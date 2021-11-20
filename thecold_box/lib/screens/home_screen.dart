@@ -23,8 +23,11 @@ class _HomePageState extends State<HomePage> {
   var currentItemSelected = 'Today';
   bool value = false;
   final list = [
-    //HomeModel(id: Filter(), name: 'Use camera to add', useby: Useby()),
-    HomeModel(id: Filter(), name: output, useby: Useby()),
+    HomeModel(id: 'Fruit', name: 'Apple', useby: '25/11/2021'),
+    HomeModel(id: 'Fruit', name: 'Banana', useby: '28/11/2021'),
+    // HomeModel(id: Filter(), name: 'Carrot', useby: 10),
+    // HomeModel(id: Filter(), name: 'Onion', useby: 15),
+    // HomeModel(id: Filter(), name: output, useby: Useby()),
   ];
 
   @override
@@ -39,10 +42,12 @@ class _HomePageState extends State<HomePage> {
                 MaterialPageRoute(builder: (context) => ProfilePage()));
           },
           icon: Icon(
-            Icons.person_outlined,
+            Icons.person,
             size: 40,
           ),
         ),
+        title: Text('Welcome, User'),
+        centerTitle: true,
         actions: [
           IconButton(
             onPressed: () {
@@ -59,74 +64,82 @@ class _HomePageState extends State<HomePage> {
 
       //Body
       body: Container(
-        margin: EdgeInsets.only(top: 20, left: 20, bottom: 20),
+        margin: EdgeInsets.only(top: 20, bottom: 20),
         child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: Text(
-                    "The Cold Box",
-                    style: TextStyle(fontSize: 45.0),
-                  )),
-              DropdownButton<String>(
-                items: items.map((String dropdownStringItem) {
-                  return DropdownMenuItem<String>(
-                    value: dropdownStringItem,
-                    child: Text(
-                      dropdownStringItem,
-                    ),
-                  );
-                }).toList(),
-                onChanged: (String? newValueSelected) {
-                  //your code to execute, when a menu item is selected from drop down
-                  setState(() {
-                    currentItemSelected = newValueSelected!;
-                  });
-                },
-                value: currentItemSelected,
+          child: Stack(
+            children: [
+              Positioned(
+                child:
+                    Lottie.asset('assets/bg.json', alignment: Alignment.center),
               ),
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      backgroundBlendMode: BlendMode.softLight),
-                  child: Stack(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 170, top: 260),
-                        child: Container(
-                          decoration: BoxDecoration(shape: BoxShape.circle),
-                          child: Positioned(
-                              child: Lottie.asset(
-                            'assets/mushroom-bros.json',
-                          )),
+              Positioned(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      height: 250,
+                      child: CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                        backgroundImage: AssetImage('assets/og_bg.png'),
+                        radius: 110,
+                      ),
+                      decoration: BoxDecoration(shape: BoxShape.circle),
+                    ),
+                    DropdownButton<String>(
+                      items: items.map((String dropdownStringItem) {
+                        return DropdownMenuItem<String>(
+                          value: dropdownStringItem,
+                          child: Text(
+                            dropdownStringItem,
+                          ),
+                        );
+                      }).toList(),
+                      onChanged: (String? newValueSelected) {
+                        //your code to execute, when a menu item is selected from drop down
+                        setState(() {
+                          currentItemSelected = newValueSelected!;
+                        });
+                      },
+                      value: currentItemSelected,
+                    ),
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            backgroundBlendMode: BlendMode.softLight),
+                        child: Positioned(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: ListView(
+                              shrinkWrap: true,
+                              children: [
+                                ...list.map(buildSingleCheckbox).toList()
+                              ],
+                            ),
+                          ),
                         ),
                       ),
-                      Positioned(
-                        child: ListView(
-                          shrinkWrap: true,
-                          children: [...list.map(buildSingleCheckbox).toList()],
+                    ),
+                    ElevatedButton.icon(
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: Size(175, 50),
+                          elevation: 2,
                         ),
-                      ),
-                    ],
-                  ),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => CameraPage()));
+                        },
+                        icon: Icon(Icons.camera),
+                        label: Text(
+                          'Got More',
+                          style: TextStyle(fontSize: 17),
+                        )),
+                  ],
                 ),
               ),
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: Size(175, 50),
-                    elevation: 2,
-                  ),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => CameraPage()));
-                  },
-                  child: Text(
-                    'Got More',
-                    style: TextStyle(fontSize: 17),
-                  )),
             ],
           ),
         ),
@@ -171,21 +184,45 @@ class _HomePageState extends State<HomePage> {
 
   Widget buildCheckBox(
           {required HomeModel list, required VoidCallback onClicked}) =>
-      ListTile(
-        onTap: onClicked,
-        leading: Checkbox(
-          value: list.isUsed,
-          onChanged: (value) => onClicked(),
-        ),
-        title: Text(
-          list.name,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 18,
+      Card(
+        elevation: 8,
+        shadowColor: Colors.black,
+        clipBehavior: Clip.antiAlias,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        child: ListTile(
+          onTap: onClicked,
+          leading: Checkbox(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+            value: list.isUsed,
+            onChanged: (value) => onClicked(),
+            checkColor: Colors.purple.shade800,
+            activeColor: Colors.transparent,
           ),
-        ),
-        subtitle: Text(
-          list.id.toString(),
+          title: Text(
+            list.name,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 18,
+            ),
+          ),
+          subtitle: Text(
+            list.id.toString(),
+          ),
+          trailing: Text(list.useby.toString()),
         ),
       );
 }
+
+// Padding(
+                            //   padding:
+                            //       const EdgeInsets.only(left: 170, top: 200),
+                            //   child: Container(
+                            //     decoration:
+                            //         BoxDecoration(shape: BoxShape.circle),
+                            //     child: Positioned(
+                            //         child: Lottie.asset(
+                            //       'assets/mushroom-bros.json',
+                            //     )),
+                            //   ),
+                            // ),

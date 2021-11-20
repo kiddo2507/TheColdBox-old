@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:thecold_box/model/home_model.dart';
 import 'package:thecold_box/screens/camerapage.dart';
 import 'package:thecold_box/screens/date_view.dart';
@@ -13,18 +14,17 @@ class TheColdBox extends StatefulWidget {
 class _TheColdBoxState extends State<TheColdBox> {
   final Color? mainColor = Colors.blueGrey[50];
   bool value = false;
-  var idk = Useby();
-  final Map = {'apple': 3, 'banana': 2, 'onion': 8, 'eggplant': 4};
   final list = [
+    HomeModel(id: 'Vegetable', name: 'Eggplant', useby: '21/12/2021'),
+    HomeModel(id: 'Fruit', name: 'Apple', useby: '25/11/2021'),
+    HomeModel(id: 'Vegetable', name: 'Pumpkin', useby: '23/12/2021'),
+    HomeModel(id: 'Fruit', name: 'Tomatoes', useby: '25/11/2021'),
+    HomeModel(id: 'Vegetable', name: 'Carrot', useby: '26/11/2021'),
+    HomeModel(id: 'Fruit', name: 'Banana', useby: '28/11/2021'),
+    HomeModel(id: 'Vegetable', name: 'Ladyfinger', useby: '29/11/2021'),
+    HomeModel(id: 'Fruit', name: 'Strawberry', useby: '2/12/2021'),
+    HomeModel(id: 'Vegetable', name: 'Cucumber', useby: '2/12/2021'),
     HomeModel(id: Filter(), name: output, useby: Useby()),
-    // HomeModel(id: 'Vegetable', name: 'Pumpkin'),
-    // HomeModel(id: 'Fruit', name: 'Banana'),
-    //HomeModel(id: 'Fruit', name: 'Tomatoes', useby: '06/08'),
-    //HomeModel(id: 'Vegetable', name: 'Carrot', useby: '06/08'),
-    //HomeModel(id: 'Vegetable', name: 'Ladyfinger', useby: '10/08'),
-    // HomeModel(id: 'Fruit', name: 'Strawberry', useby: '10/08'),
-    // HomeModel(id: 'Vegetable', name: 'Brinjal', useby: '10/08'),
-    // HomeModel(id: 'Vegetable', name: 'Cucumber', useby: '10/08'),
   ];
 
   @override
@@ -59,60 +59,75 @@ class _TheColdBoxState extends State<TheColdBox> {
         width: width * 0.99,
         margin: EdgeInsets.all(20.0),
         child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              Text(
-                "The Cold Box List",
-                style: TextStyle(fontSize: 40.0),
+          child: Stack(
+            children: [
+              Positioned(
+                child:
+                    Lottie.asset('assets/bg.json', alignment: Alignment.center),
+                left: 0,
+                right: 0,
+                top: 0,
+                bottom: 0,
               ),
-              const SizedBox(height: 10),
-              Expanded(
-                child: ListView(
-                  shrinkWrap: true,
-                  children: [...list.map(buildSingleCheckbox).toList()],
-                ),
-              ),
-              const SizedBox(
-                height: 25,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: Size(120, 50),
-                      elevation: 2,
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => CameraPage()));
-                    },
-                    child: Text(
-                      'Got More',
-                      style: TextStyle(fontSize: 17),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    "Your List",
+                    style: TextStyle(fontSize: 40.0),
+                  ),
+                  const SizedBox(height: 20),
+                  Expanded(
+                    child: ListView(
+                      shrinkWrap: true,
+                      children: [...list.map(buildSingleCheckbox).toList()],
                     ),
                   ),
                   const SizedBox(
-                    width: 10,
+                    height: 25,
                   ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: Size(120, 50),
-                      elevation: 2,
-                    ),
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => DateView()));
-                      //openDialogueBox(context);
-                    },
-                    child: Text(
-                      'Calendar view',
-                      style: TextStyle(fontSize: 17),
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      ElevatedButton.icon(
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: Size(120, 50),
+                          elevation: 2,
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => CameraPage()));
+                        },
+                        icon: Icon(Icons.camera),
+                        label: Text(
+                          'Got More',
+                          style: TextStyle(fontSize: 17),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: Size(120, 50),
+                          elevation: 2,
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DateView()));
+                          //openDialogueBox(context);
+                        },
+                        child: Text(
+                          'Calendar view',
+                          style: TextStyle(fontSize: 17),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -134,21 +149,32 @@ class _TheColdBoxState extends State<TheColdBox> {
 
   Widget buildCheckBox(
           {required HomeModel list, required VoidCallback onClicked}) =>
-      ListTile(
-        onTap: onClicked,
-        leading: Checkbox(
-          value: list.isUsed,
-          onChanged: (value) => onClicked(),
-        ),
-        title: Text(
-          list.name,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 18,
+      Card(
+        elevation: 8,
+        shadowColor: Colors.black,
+        clipBehavior: Clip.antiAlias,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        child: ListTile(
+          onTap: onClicked,
+          leading: Checkbox(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+            value: list.isUsed,
+            onChanged: (value) => onClicked(),
+            checkColor: Colors.purple.shade800,
+            activeColor: Colors.transparent,
           ),
-        ),
-        subtitle: Text(
-          list.id.toString(),
+          title: Text(
+            list.name,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 18,
+            ),
+          ),
+          subtitle: Text(
+            list.id.toString(),
+          ),
+          trailing: Text(list.useby.toString()),
         ),
       );
   // openDialogueBox(BuildContext context) {

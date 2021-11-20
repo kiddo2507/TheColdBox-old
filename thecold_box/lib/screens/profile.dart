@@ -58,7 +58,7 @@ class ProfilePage extends StatelessWidget {
                     ),
                     onPressed: () {},
                     child: Text(
-                      'Shruti',
+                      'Kiddo',
                       style: TextStyle(fontSize: 17),
                     )
                     // child: StreamBuilder(
@@ -88,7 +88,7 @@ class ProfilePage extends StatelessWidget {
                     ),
                     onPressed: () {},
                     child: Text(
-                      'shrutisinha645@gmail.com',
+                      'priyayelisetty25@gmail.com',
                       style: TextStyle(fontSize: 17),
                     )),
                 const SizedBox(

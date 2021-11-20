@@ -1,0 +1,8 @@
+done --> TBC - replace w logo
+done --> lottie background
+done --> each list item w a border - https://www.youtube.com/watch?v=8PAfz0ln4rE + add a box behind the whole list
+done --> making tick box circle
+change color ka thing for dark theme + light theme
+dark theme light theme ke liye icon sun/moon
+
+

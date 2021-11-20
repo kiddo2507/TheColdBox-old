@@ -104,21 +104,38 @@ class MenuPage extends StatelessWidget {
                     height: 20,
                   ),
                   InkWell(
-                      child: TextButton(
-                        style: TextButton.styleFrom(
-                          backgroundColor: Color(0xFF6300EC),
-                          padding: const EdgeInsets.fromLTRB(74, 20, 74, 20),
-                          textStyle: const TextStyle(fontSize: 17),
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: Size(250, 60),
+                          elevation: 2,
                         ),
-                        onPressed: () => launch(
-                            'https://docs.flutter.io/flutter/services/UrlLauncher-class.html'),
-                        child: const Text(
+                        onPressed: () {
+                          launch(
+                              'https://docs.flutter.io/flutter/services/UrlLauncher-class.html');
+                        },
+                        child: Text(
                           'TBC Website',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                      onTap: () => launch(
-                          'https://docs.flutter.io/flutter/services/UrlLauncher-class.html')),
+                          style: TextStyle(fontSize: 17),
+                        )),
+                    onTap: () => launch(
+                        'https://docs.flutter.io/flutter/services/UrlLauncher-class.html'),
+                  ),
+                  // InkWell(
+                  //     child: TextButton(
+                  //       style: TextButton.styleFrom(
+                  //         backgroundColor: Color(0xFF6300EC),
+                  //         padding: const EdgeInsets.fromLTRB(74, 20, 74, 20),
+                  //         textStyle: const TextStyle(fontSize: 17),
+                  //       ),
+                  //       onPressed: () => launch(
+                  //           'https://docs.flutter.io/flutter/services/UrlLauncher-class.html'),
+                  //       child: const Text(
+                  //         'TBC Website',
+                  //         style: TextStyle(color: Colors.white),
+                  //       ),
+                  //     ),
+                  //     onTap: () => launch(
+                  //         'https://docs.flutter.io/flutter/services/UrlLauncher-class.html')),
                 ],
               ),
             )

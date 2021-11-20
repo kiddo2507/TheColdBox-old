@@ -23,16 +23,15 @@ class ThemeProvider extends ChangeNotifier {
 class MyThemes {
   static final darkTheme = ThemeData(
     scaffoldBackgroundColor: Colors.grey.shade900,
-    colorScheme: ColorScheme.dark(),
+    colorScheme: ColorScheme.dark(), //surface: Colors.purple.shade200),
     primaryColor: Colors.black,
-    buttonTheme: ButtonThemeData(buttonColor: Color.fromRGBO(49, 39, 79, 1)),
     iconTheme: IconThemeData(color: Colors.purple.shade200, opacity: 0.8),
     backgroundColor: Colors.grey.shade900,
   );
 
   static final lightTheme = ThemeData(
     scaffoldBackgroundColor: Colors.white,
-    colorScheme: ColorScheme.light(),
+    colorScheme: ColorScheme.light(primary: Colors.purple.shade800),
     primaryColor: Colors.white,
     iconTheme: IconThemeData(color: Colors.red, opacity: 0.8),
     backgroundColor: Colors.white,

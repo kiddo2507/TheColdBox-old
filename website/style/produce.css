@@ -7,7 +7,7 @@
 }
 
 body{
-    background-image: linear-gradient( rgba(0, 0, 0, 0.315), rgba(0,0,0,0.315) ), url(img/brooke-lark-08bOYnH_r_E-unsplash.jpg);
+    background-image: linear-gradient( rgba(0, 0, 0, 0.062), rgba(0,0,0,0.062) ), url(img/brooke-lark-08bOYnH_r_E-unsplash.jpg);
     background-size: cover;
     background-position: center;
   }
@@ -80,7 +80,7 @@ ul li a:hover::after{
     float: right;
   }
   
-  .text-box p{
+.text-box p{
     font-size: 35px;
     font-weight: 600;
     color: rgba(3, 3, 3, 0.315);
@@ -90,21 +90,47 @@ ul li a:hover::after{
     background-position: 0 0 ;
   }
   
-  .text-box h1{
+.text-box h1{
     font-size: 90px;
     line-height: 100px;
   }
 
-  .f1{
-      width: 60%;
+/**********The main content**********/
+
+.f1{
+      width: 50%;
       height: max-content;
       float: right;
       text-align: left;
-      font-size: 18px;
       color: black;
-      margin: 10px;
-      border: 1px solid black;
+      margin: 20px;
   }
+
+#accordion section{
+    margin: 20px;
+}
+
+#accordion section p{
+    display: none;
+    font-size: 18px;
+  }
+
+#accordion section a{
+      color: black;
+      text-decoration: none;
+      font-size: 25px;
+      font-style: oblique;
+  }
+
+#accordion section a:hover{
+      text-decoration: underline;
+      color: rgb(247, 89, 115);
+  }
+
+#accordion section:target p{
+      display: block;
+      padding: 15px;
+}
 
 @media (max-width:700px) {
 

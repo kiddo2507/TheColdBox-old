@@ -52,7 +52,7 @@ class _SettingsPageState extends State<SettingsPage> {
               ),
             ),
             const SizedBox(
-              height: 45,
+              height: 25,
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -72,9 +72,24 @@ class _SettingsPageState extends State<SettingsPage> {
                 ),
               ],
             ),
-            const SizedBox(
-              height: 10,
-            ),
+            // ElevatedButton(
+            //     style: ElevatedButton.styleFrom(
+            //       minimumSize: Size(250, 60),
+            //       elevation: 2,
+            //     ),
+            //     onPressed: () {
+            //       changeNotif();
+            //     },
+            //     child: Row(
+            //       mainAxisAlignment: MainAxisAlignment.spaceAround,
+            //       children: [
+            //         Text(
+            //           'Dark theme',
+            //           style: TextStyle(fontSize: 17),
+            //         ),
+            //         ChangeThemeButtonWidget(),
+            //       ],
+            //     )),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
