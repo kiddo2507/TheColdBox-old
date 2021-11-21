@@ -23,11 +23,9 @@ class _HomePageState extends State<HomePage> {
   var currentItemSelected = 'Today';
   bool value = false;
   final list = [
+    HomeModel(id: 'Vegetable', name: 'Eggplant', useby: '21/11/2021'),
     HomeModel(id: 'Fruit', name: 'Apple', useby: '25/11/2021'),
     HomeModel(id: 'Fruit', name: 'Banana', useby: '28/11/2021'),
-    // HomeModel(id: Filter(), name: 'Carrot', useby: 10),
-    // HomeModel(id: Filter(), name: 'Onion', useby: 15),
-    // HomeModel(id: Filter(), name: output, useby: Useby()),
   ];
 
   @override
@@ -104,20 +102,11 @@ class _HomePageState extends State<HomePage> {
                       value: currentItemSelected,
                     ),
                     Expanded(
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            backgroundBlendMode: BlendMode.softLight),
-                        child: Positioned(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: ListView(
-                              shrinkWrap: true,
-                              children: [
-                                ...list.map(buildSingleCheckbox).toList()
-                              ],
-                            ),
-                          ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: ListView(
+                          shrinkWrap: true,
+                          children: [...list.map(buildSingleCheckbox).toList()],
                         ),
                       ),
                     ),

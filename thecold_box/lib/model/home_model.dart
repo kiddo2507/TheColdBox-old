@@ -1,7 +1,5 @@
 import 'package:thecold_box/screens/camerapage.dart';
 
-final DateTime useby = DateTime.now();
-
 class HomeModel {
   final String id;
   final String name;
@@ -14,8 +12,6 @@ class HomeModel {
       this.isUsed = false,
       required this.useby});
 }
-
-//final Map data = {'apple': 3, 'banana': 2, 'onion': 8, 'eggplant': 4};
 
 String Useby() {
   final Map data = {

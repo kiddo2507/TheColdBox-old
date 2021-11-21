@@ -17,7 +17,7 @@ class _TheColdBoxState extends State<TheColdBox> {
   final list = [
     HomeModel(id: 'Vegetable', name: 'Eggplant', useby: '21/12/2021'),
     HomeModel(id: 'Fruit', name: 'Apple', useby: '25/11/2021'),
-    HomeModel(id: 'Vegetable', name: 'Pumpkin', useby: '23/12/2021'),
+    HomeModel(id: 'Vegetable', name: 'Pumpkin', useby: '23/11/2021'),
     HomeModel(id: 'Fruit', name: 'Tomatoes', useby: '25/11/2021'),
     HomeModel(id: 'Vegetable', name: 'Carrot', useby: '26/11/2021'),
     HomeModel(id: 'Fruit', name: 'Banana', useby: '28/11/2021'),

@@ -111,14 +111,14 @@ class MenuPage extends StatelessWidget {
                         ),
                         onPressed: () {
                           launch(
-                              'https://docs.flutter.io/flutter/services/UrlLauncher-class.html');
+                              'https://kiddo2507.github.io/TheColdBoxWebsite/');
                         },
                         child: Text(
                           'TBC Website',
                           style: TextStyle(fontSize: 17),
                         )),
                     onTap: () => launch(
-                        'https://docs.flutter.io/flutter/services/UrlLauncher-class.html'),
+                        'https://kiddo2507.github.io/TheColdBoxWebsite/'),
                   ),
                   // InkWell(
                   //     child: TextButton(

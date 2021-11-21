@@ -54,13 +54,6 @@ class _LoginScreenNewState extends State<LoginScreenNew> {
                   ],
                 ),
               ),
-              // SizedBox(
-              //   height: 200,
-              //   child: Image.asset(
-              //     "assets/og_logo.png",
-              //     fit: BoxFit.contain,
-              //   ),
-              // ),
               SizedBox(height: 45),
               Padding(
                 padding: EdgeInsets.all(8.0),
