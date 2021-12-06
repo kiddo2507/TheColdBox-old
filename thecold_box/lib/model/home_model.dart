@@ -1,5 +1,8 @@
 import 'package:thecold_box/screens/camerapage.dart';
 
+DateTime now = DateTime.now();
+DateTime predict = now.add(Duration(days: useby()));
+
 class HomeModel {
   final String id;
   final String name;
@@ -15,16 +18,28 @@ class HomeModel {
 
 String Useby() {
   final Map data = {
-    'Apple': '2/12/2021',
-    'Banana': '2/12/2021',
-    'Orange': '3/12/2021',
-    'Mango': '3/12/2021',
-    'Grapes': '4/12/2021',
+    'Apple': '4/12/2021',
+    'Banana': '27/11/2021',
+    'Orange': '2/12/2021',
+    'Mango': '29/11/2021',
+    'Grapes': '6/12/2021',
     'Cauliflower': '4/12/2021',
-    'Eggplant': '2/12/2021',
-    'Potato': '5/12/2021',
-    'Onion': '5/12/2021',
-    'Cabbage': '3/12/2021'
+    'Eggplant': '28/11/2021',
+    'Potato': '14/12/2021',
+    'Onion': '7/12/2021',
+    'Cabbage': '2/12/2021'
+  };
+  final Map realdata = {
+    'Apple': 10,
+    'Banana': 3,
+    'Orange': 8,
+    'Mango': 5,
+    'Grapes': 12,
+    'Cauliflower': 10,
+    'Eggplant': 4,
+    'Potato': 20,
+    'Onion': 15,
+    'Cabbage': 8
   };
   int l = data.length;
   String value1 = '';
@@ -63,4 +78,8 @@ String Filter() {
   });
 
   return value2;
+}
+
+int useby() {
+  return 0;
 }

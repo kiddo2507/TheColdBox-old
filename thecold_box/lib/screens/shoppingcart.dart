@@ -56,7 +56,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                   onClicked: () => removeItem(index),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

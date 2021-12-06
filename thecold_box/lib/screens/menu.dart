@@ -4,7 +4,6 @@ import 'package:thecold_box/screens/home_screen.dart';
 import 'package:thecold_box/screens/settings.dart';
 import 'package:thecold_box/screens/shoppingcart.dart';
 import 'package:thecold_box/screens/thecold_box.dart';
-import 'package:url_launcher/link.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MenuPage extends StatelessWidget {

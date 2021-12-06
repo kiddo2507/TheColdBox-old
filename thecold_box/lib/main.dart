@@ -5,8 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:thecold_box/provider/theme_provider.dart';
-import 'package:thecold_box/screens/home_screen.dart';
-import 'package:thecold_box/screens/login.dart';
 import 'package:thecold_box/src/myapp.dart';
 
 List<CameraDescription>? camera;
@@ -21,11 +19,6 @@ Future<void> main() async {
     ChangeNotifierProvider(
       create: (context) => ThemeProvider(),
       builder: (context, _) => MyApp(),
-      //MaterialApp(home: email == null ? LoginScreenNew() : HomePage()),
     ),
   );
 }
-
-
-// Navigator.push(
-//   context, MaterialPageRoute(builder: (context) => MenuPage()));

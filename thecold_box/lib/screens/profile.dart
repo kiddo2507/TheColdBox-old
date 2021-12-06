@@ -1,10 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:lottie/lottie.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:thecold_box/screens/login.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:thecold_box/src/myapp.dart';
 
 import 'home_screen.dart';
 
@@ -88,7 +88,7 @@ class ProfilePage extends StatelessWidget {
                     ),
                     onPressed: () {},
                     child: Text(
-                      'priyayelisetty25@gmail.com',
+                      "priyayelisetty25@gmail.com",
                       style: TextStyle(fontSize: 17),
                     )),
                 const SizedBox(

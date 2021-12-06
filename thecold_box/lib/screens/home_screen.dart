@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:lottie/lottie.dart';
 import 'package:thecold_box/model/home_model.dart';
 import 'package:thecold_box/screens/camerapage.dart';
@@ -23,9 +21,8 @@ class _HomePageState extends State<HomePage> {
   var currentItemSelected = 'Today';
   bool value = false;
   final list = [
-    HomeModel(id: 'Vegetable', name: 'Eggplant', useby: '21/11/2021'),
-    HomeModel(id: 'Fruit', name: 'Apple', useby: '25/11/2021'),
-    HomeModel(id: 'Fruit', name: 'Banana', useby: '28/11/2021'),
+    HomeModel(id: 'Vegetable', name: 'Eggplant', useby: '24/11/2021'),
+    HomeModel(id: 'Fruit', name: 'Apple', useby: '24/11/2021'),
   ];
 
   @override

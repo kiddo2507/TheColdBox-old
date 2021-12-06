@@ -15,15 +15,15 @@ class _TheColdBoxState extends State<TheColdBox> {
   final Color? mainColor = Colors.blueGrey[50];
   bool value = false;
   final list = [
-    HomeModel(id: 'Vegetable', name: 'Eggplant', useby: '21/12/2021'),
-    HomeModel(id: 'Fruit', name: 'Apple', useby: '25/11/2021'),
-    HomeModel(id: 'Vegetable', name: 'Pumpkin', useby: '23/11/2021'),
-    HomeModel(id: 'Fruit', name: 'Tomatoes', useby: '25/11/2021'),
-    HomeModel(id: 'Vegetable', name: 'Carrot', useby: '26/11/2021'),
-    HomeModel(id: 'Fruit', name: 'Banana', useby: '28/11/2021'),
-    HomeModel(id: 'Vegetable', name: 'Ladyfinger', useby: '29/11/2021'),
-    HomeModel(id: 'Fruit', name: 'Strawberry', useby: '2/12/2021'),
-    HomeModel(id: 'Vegetable', name: 'Cucumber', useby: '2/12/2021'),
+    HomeModel(id: 'Vegetable', name: 'Eggplant', useby: '24/11/2021'),
+    HomeModel(id: 'Fruit', name: 'Apple', useby: '24/11/2021'),
+    HomeModel(id: 'Fruit', name: 'Banana', useby: '25/11/2021'),
+    HomeModel(id: 'Vegetable', name: 'Potato', useby: '26/11/2021'),
+    HomeModel(id: 'Fruit', name: 'Kiwi', useby: '27/11/2021'),
+    HomeModel(id: 'Vegetable', name: 'Bottleguard', useby: '27/11/2021'),
+    HomeModel(id: 'Fruit', name: 'Orange', useby: '29/11/2021'),
+    HomeModel(id: 'Vegetable', name: 'Potota', useby: '1/12/2021'),
+    HomeModel(id: 'Vegetable', name: 'Onion', useby: '2/12/2021'),
     HomeModel(id: Filter(), name: output, useby: Useby()),
   ];
 
